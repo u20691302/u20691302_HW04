@@ -125,7 +125,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\BigCats.cs" />
     <Compile Include="Models\MarineAnimals.cs" />
+    <Compile Include="Models\Primates.cs" />
     <Compile Include="Models\Wildlife.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -170,6 +172,12 @@
     <Content Include="Views\Home\Details.cshtml" />
     <Content Include="Views\Home\Animals.cshtml" />
     <Content Include="Views\Home\Create.cshtml" />
+    <Content Include="Views\Home\BigCats.cshtml" />
+    <Content Include="Views\Home\Primates.cshtml" />
+    <Content Include="Views\Home\DetailsBigCats.cshtml" />
+    <Content Include="Views\Home\DetailsPrimates.cshtml" />
+    <Content Include="Views\Home\CreateBigCats.cshtml" />
+    <Content Include="Views\Home\CreatePrimates.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Wildlife\" />
