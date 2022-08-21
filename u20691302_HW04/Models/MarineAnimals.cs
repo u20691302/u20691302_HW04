@@ -24,7 +24,7 @@ namespace u20691302_HW04.Models
         public override string getStatus()
         {
             string status = "";
-            if (Population > 10000)
+            if (Population >= 10000)
             {
                 status = "Least concern / Near threatened";
             }
@@ -32,11 +32,11 @@ namespace u20691302_HW04.Models
             {
                 status = "Vulnerable";
             }
-            if (Population < 2500)
+            if (Population <= 2500)
             {
                 status = "Endangered";
             }
-            if (Population < 250)
+            if (Population <= 250)
             {
                 status = "Critically endangered";
             }

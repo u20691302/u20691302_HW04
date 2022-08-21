@@ -180,6 +180,7 @@
     <Content Include="Views\Home\CreatePrimates.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Resources\" />
     <Folder Include="Views\Wildlife\" />
   </ItemGroup>
   <ItemGroup>
