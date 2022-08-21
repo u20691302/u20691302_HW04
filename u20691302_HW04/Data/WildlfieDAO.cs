@@ -6,7 +6,7 @@ namespace u20691302_HW04.Data
 {
     internal class wildlifeDAO
     {
-        private string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=WildLifeDatabase;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        private string connectionString = @"Data Source=(LocalDb)\MSSQLLocalDB;Initial Catalog= u20691302_HW04;Integrated Security=SSPI;AttachDBFilename=|DataDirectory|\WildLifeDatabase.mdf";
         public List<MarineAnimals> FetchAll()
         {
             List<MarineAnimals> returnList = new List<MarineAnimals>();
