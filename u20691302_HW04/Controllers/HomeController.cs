@@ -10,9 +10,6 @@ namespace u20691302_HW04.Controllers
 {
     public class HomeController : Controller
     {
-        
-
-
         public ActionResult Index()
         {
             return View();
@@ -37,9 +34,9 @@ namespace u20691302_HW04.Controllers
             return View("Details", marineAnimals);
         }
 
-        public ActionResult Create()
+        public ActionResult Create(MarineAnimals marineAnimals)
         {
-            return View("Create");
+            return View("Create", marineAnimals);
         }
 
         
@@ -69,7 +66,6 @@ namespace u20691302_HW04.Controllers
             wildlifeDAO.Delete(id);
 
             List<MarineAnimals> marineAnimals = wildlifeDAO.FetchAll();
-
 
             return View("Animals", marineAnimals);
         }

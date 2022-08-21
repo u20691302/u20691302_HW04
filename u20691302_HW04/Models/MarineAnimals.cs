@@ -18,31 +18,29 @@ namespace u20691302_HW04.Models
 
         public MarineAnimals(string habitat, int id, string scientificName, int population, string status):base(id, scientificName, population, status)
         {
-            Habitat = habitat; 
+            Habitat = habitat;
         }
-
-        
 
         public override string getStatus()
         {
             string status = "";
-            if (Population > 2000)
+            if (Population > 10000)
             {
                 status = "Least concern / Near threatened";
             }
-            else if (Population < 10000)
+            if (Population < 10000)
             {
                 status = "Vulnerable";
             }
-            else if (Population < 2500)
+            if (Population < 2500)
             {
                 status = "Endangered";
             }
-            else if (Population < 250)
+            if (Population < 250)
             {
                 status = "Critically endangered";
             }
-            else if (Population == 0)
+            if (Population == 0)
             {
                 status = "Extinct in the wild";
             }

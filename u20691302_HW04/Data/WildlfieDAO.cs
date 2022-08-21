@@ -103,7 +103,7 @@ namespace u20691302_HW04.Data
                 command.Parameters.Add("@ScientificName", System.Data.SqlDbType.VarChar, 50).Value = marineAnimals.ScientificName;
                 command.Parameters.Add("@Habitat", System.Data.SqlDbType.VarChar, 1000).Value = marineAnimals.Habitat;
                 command.Parameters.Add("@Population", System.Data.SqlDbType.Int, 50).Value = marineAnimals.Population;
-                command.Parameters.Add("@Status", System.Data.SqlDbType.VarChar, 50).Value = marineAnimals.Status;
+                command.Parameters.Add("@Status", System.Data.SqlDbType.VarChar, 50).Value = marineAnimals.getStatus();
 
 
                 connection.Open();
