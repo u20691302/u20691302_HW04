@@ -4,50 +4,60 @@
     ViewBag.Title = "Primates";
 }
 
-<h2>Primates</h2>
+<h1 class="card-title">WWF Endangered Animals Tracker</h1>
+<h4 class="card-subtitle mb-2 text-muted">Taberer Applications</h4>
+<div class="container" style="background-color: #292b2c; color: white; padding: 25px ">
+    <!--Bootstrap Card-->
+    <div class="card">
+        <div class="card-body">
+            <h2>Primates</h2>
+            <br />
 
-<p>
-    @Html.ActionLink("Create New", "CreatePrimates")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.ScientificName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Habitat)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Population)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Status)
-        </th>
+            <p>
+                @Html.ActionLink("Create New", "CreatePrimates")
+            </p>
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ScientificName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Habitat)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Population)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Status)
+                    </th>
 
-        <th></th>
-    </tr>
+                    <th></th>
+                </tr>
 
-@foreach (var item in Model) {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.ScientificName)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Habitat)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Population)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Status)
-    </td>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ScientificName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Habitat)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Population)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Status)
+                        </td>
 
-    <td>
-        @Html.ActionLink("Update", "EditPrimates", new { id = item.ID }) |
-        @Html.ActionLink("Details", "DetailsPrimates", new { id = item.ID }) |
-        @Html.ActionLink("Delete", "DeletePrimates", new { id = item.ID })
-    </td>
-</tr>
-}
-
-</table>
+                        <td>
+                            @Html.ActionLink("Update", "EditPrimates", new { id = item.ID }) |
+                            @Html.ActionLink("Details", "DetailsPrimates", new { id = item.ID }) |
+                            @Html.ActionLink("Delete", "DeletePrimates", new { id = item.ID })
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+</div>
