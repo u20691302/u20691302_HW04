@@ -16,6 +16,7 @@ namespace u20691302_HW04.Controllers
         }
 
 
+
         //Read database into tables
         public ActionResult Animals()
         {
@@ -131,7 +132,7 @@ namespace u20691302_HW04.Controllers
 
 
 
-        //Create or update Primates
+        //Create or update primates
         public ActionResult CreatePrimates(Primates primates)
         {
             return View("CreatePrimates", primates);
@@ -179,7 +180,7 @@ namespace u20691302_HW04.Controllers
             return View("BigCats", bigCats);
         }
 
-        //Delete marine primates
+        //Delete primates
         public ActionResult DeletePrimates(int id)
         {
             wildlifeDAO wildlifeDAO = new wildlifeDAO();
@@ -190,5 +191,54 @@ namespace u20691302_HW04.Controllers
             return View("Primates", primates);
         }
 
+
+
+        //Search marine animals
+        public ActionResult SearchMarineAnimals()
+        {
+            return View("SearchMarineAnimals");
+        }
+
+        public ActionResult SearchForMarineAnimals(string searchPhrase)
+        {
+            //get list of search results
+            wildlifeDAO wildlifeDAO = new wildlifeDAO();
+
+            List<MarineAnimals> searchResults = wildlifeDAO.SearchForMarineAnimals(searchPhrase);
+
+            return View("Animals", searchResults);
+        }
+
+        //Search big cats
+        public ActionResult SearchBigCats()
+        {
+            return View("SearchBigCats");
+        }
+
+        public ActionResult SearchForBigCats(string searchPhrase)
+        {
+            //get list of search results
+            wildlifeDAO wildlifeDAO = new wildlifeDAO();
+
+            List<BigCats> searchResults = wildlifeDAO.SearchForBigCats(searchPhrase);
+
+            return View("BigCats", searchResults);
+        }
+
+        //Search primates
+        public ActionResult SearchPrimates()
+        {
+            return View("SearchPrimates");
+        }
+
+        public ActionResult SearchForPrimates(string searchPhrase)
+        {
+            //get list of search results
+            wildlifeDAO wildlifeDAO = new wildlifeDAO();
+
+            List<Primates> searchResults = wildlifeDAO.SearchForPrimates(searchPhrase);
+
+            return View("Primates", searchResults);
+        }
     }
 }

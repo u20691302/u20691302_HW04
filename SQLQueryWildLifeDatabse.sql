@@ -37,11 +37,11 @@ VALUES
 ('Panthera tigris', 'Tropical rainforests, evergreen forests, temperate forests, mangrove swamps, grasslands, and savannas', '3900', 'Endangered'),
 ('Panthera pardus orientalis', 'Temperate, Broadleaf, and Mixed Forests', '84', 'Critically Endangered'),
 ('Panthera uncia', 'High mountains', '6500', 'Vulnerable'),
-('Panthera onca', 'Forests, Grasslands', '10001', 'Least concern / Near threatened');
+('Panthera onca', 'Forests, Grasslands', '10001', 'Least Concern / Near Threatened');
 
 INSERT INTO Primates (ScientificName, Habitat, Population, Status)
 VALUES
-('Gorilla gorilla and Gorilla beringei', 'Congo Forests', '200000', 'Least concern / Near threatened'),
+('Gorilla gorilla and Gorilla beringei', 'Congo Forests', '200000', 'Least Concern / Near Threatened'),
 ('Pan paniscus', 'Congo Forests', '50000', 'Endangered'),
 ('Pongo abelii, Pongo pygmaeus', 'Signapore, Brunei Forests', '125000', 'Critically Endangered'),
 ('Pan troglodytes', 'Forests (moist and dry forests), Savannah Woodlands, and Grassland-Forest mosaics', '299700', 'Endangered');

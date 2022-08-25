@@ -26,7 +26,7 @@ namespace u20691302_HW04.Models
             string status = "";
             if (Population >= 10000)
             {
-                status = "Least concern / Near threatened";
+                status = "Least Concern / Near Threatened";
             }
             if (Population <= 10000)
             {
@@ -38,11 +38,11 @@ namespace u20691302_HW04.Models
             }
             if (Population <= 250)
             {
-                status = "Critically endangered";
+                status = "Critically Endangered";
             }
             if (Population == 0)
             {
-                status = "Extinct in the wild";
+                status = "Extinct in The Wild";
             }
             return status;
         }

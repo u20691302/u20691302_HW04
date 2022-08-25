@@ -178,10 +178,12 @@
     <Content Include="Views\Home\DetailsPrimates.cshtml" />
     <Content Include="Views\Home\CreateBigCats.cshtml" />
     <Content Include="Views\Home\CreatePrimates.cshtml" />
+    <Content Include="Views\Home\SearchMarineAnimals.cshtml" />
+    <Content Include="Views\Home\SearchBigCats.cshtml" />
+    <Content Include="Views\Home\SearchPrimates.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
-    <Folder Include="Views\Wildlife\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

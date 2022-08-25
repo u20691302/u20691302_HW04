@@ -387,5 +387,120 @@ namespace u20691302_HW04.Data
             }
         }
 
+
+
+        //Search for marine animals
+        internal List<MarineAnimals> SearchForMarineAnimals(string searchPhrase)
+        {
+            List<MarineAnimals> returnList = new List<MarineAnimals>();
+
+            //access database
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string sqlQuery = "SELECT * FROM dbo.MarineAnimals WHERE Status = @searchFor";
+
+                SqlCommand command = new SqlCommand(sqlQuery, connection);
+
+                command.Parameters.Add("@SearchFor", System.Data.SqlDbType.VarChar).Value = searchPhrase;
+
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+                //Checks if the reader has rows then we can loop through the list and populate table
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        //create new marine animal object and add it to the list to return.
+                        MarineAnimals marineAnimals = new MarineAnimals();
+
+                        marineAnimals.ID = reader.GetInt32(0);
+                        marineAnimals.ScientificName = reader.GetString(1);
+                        marineAnimals.Habitat = reader.GetString(2);
+                        marineAnimals.Population = reader.GetInt32(3);
+                        marineAnimals.Status = reader.GetString(4);
+
+                        returnList.Add(marineAnimals);
+                    }
+                }
+            }
+            return returnList;
+        }
+
+        //Search for big cats
+        internal List<BigCats> SearchForBigCats(string searchPhrase)
+        {
+            List<BigCats> returnList = new List<BigCats>();
+
+            //access database
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string sqlQuery = "SELECT * FROM dbo.BigCats WHERE Status = @searchFor";
+
+                SqlCommand command = new SqlCommand(sqlQuery, connection);
+
+                command.Parameters.Add("@SearchFor", System.Data.SqlDbType.VarChar).Value = searchPhrase;
+
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+                //Checks if the reader has rows then we can loop through the list and populate table
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        //create new marine animal object and add it to the list to return.
+                        BigCats bigCats = new BigCats();
+
+                        bigCats.ID = reader.GetInt32(0);
+                        bigCats.ScientificName = reader.GetString(1);
+                        bigCats.Habitat = reader.GetString(2);
+                        bigCats.Population = reader.GetInt32(3);
+                        bigCats.Status = reader.GetString(4);
+
+                        returnList.Add(bigCats);
+                    }
+                }
+            }
+            return returnList;
+        }
+
+        //Search for primates
+        internal List<Primates> SearchForPrimates(string searchPhrase)
+        {
+            List<Primates> returnList = new List<Primates>();
+
+            //access database
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string sqlQuery = "SELECT * FROM dbo.Primates WHERE Status = @searchFor";
+
+                SqlCommand command = new SqlCommand(sqlQuery, connection);
+
+                command.Parameters.Add("@SearchFor", System.Data.SqlDbType.VarChar).Value = searchPhrase;
+
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+                //Checks if the reader has rows then we can loop through the list and populate table
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        //create new marine animal object and add it to the list to return.
+                        Primates primates = new Primates();
+
+                        primates.ID = reader.GetInt32(0);
+                        primates.ScientificName = reader.GetString(1);
+                        primates.Habitat = reader.GetString(2);
+                        primates.Population = reader.GetInt32(3);
+                        primates.Status = reader.GetString(4);
+
+                        returnList.Add(primates);
+                    }
+                }
+            }
+            return returnList;
+        }
     }
 }
