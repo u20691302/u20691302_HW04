@@ -39,6 +39,7 @@ namespace u20691302_HW04.Data
                         marineAnimals.Habitat = reader.GetString(2);
                         marineAnimals.Population = reader.GetInt32(3);
                         marineAnimals.Status = reader.GetString(4);
+                        marineAnimals.ImgPath = reader.GetString(5);
 
                         returnList.Add(marineAnimals);
                     }
@@ -74,6 +75,7 @@ namespace u20691302_HW04.Data
                         bigCats.Habitat = reader.GetString(2);
                         bigCats.Population = reader.GetInt32(3);
                         bigCats.Status = reader.GetString(4);
+                        bigCats.ImgPath = reader.GetString(5);
 
                         returnList.Add(bigCats);
                     }
@@ -109,6 +111,8 @@ namespace u20691302_HW04.Data
                         primates.Habitat = reader.GetString(2);
                         primates.Population = reader.GetInt32(3);
                         primates.Status = reader.GetString(4);
+                        primates.ImgPath = reader.GetString(5);
+
 
                         returnList.Add(primates);
                     }
@@ -146,6 +150,7 @@ namespace u20691302_HW04.Data
                         marineAnimals.Habitat = reader.GetString(2);
                         marineAnimals.Population = reader.GetInt32(3);
                         marineAnimals.Status = reader.GetString(4);
+                        marineAnimals.ImgPath = reader.GetString(5);
                     }
                 }
                 return marineAnimals;
@@ -179,6 +184,7 @@ namespace u20691302_HW04.Data
                         bigCats.Habitat = reader.GetString(2);
                         bigCats.Population = reader.GetInt32(3);
                         bigCats.Status = reader.GetString(4);
+                        bigCats.ImgPath = reader.GetString(5);
                     }
                 }
                 return bigCats;
@@ -212,6 +218,7 @@ namespace u20691302_HW04.Data
                         primates.Habitat = reader.GetString(2);
                         primates.Population = reader.GetInt32(3);
                         primates.Status = reader.GetString(4);
+                        primates.ImgPath = reader.GetString(5);
                     }
                 }
                 return primates;
@@ -232,11 +239,11 @@ namespace u20691302_HW04.Data
 
                 if (marineAnimals.ID <= 0)
                 {
-                    sqlQuery = "INSERT INTO dbo.MarineAnimals Values(@ScientificName, @Habitat, @Population, @Status)";
+                    sqlQuery = "INSERT INTO dbo.MarineAnimals Values(@ScientificName, @Habitat, @Population, @Status, @ImgPath)";
                 }
                 else
                 {
-                    sqlQuery = "UPDATE dbo.MarineAnimals SET ScientificName = @ScientificName, Habitat = @Habitat, Population = @Population, Status = @Status WHERE Id = @Id";
+                    sqlQuery = "UPDATE dbo.MarineAnimals SET ScientificName = @ScientificName, Habitat = @Habitat, Population = @Population, Status = @Status, ImgPath = @ImgPath WHERE Id = @Id";
                 }
                 
                 SqlCommand command = new SqlCommand(sqlQuery, connection);
@@ -246,6 +253,7 @@ namespace u20691302_HW04.Data
                 command.Parameters.Add("@Habitat", System.Data.SqlDbType.VarChar, 1000).Value = marineAnimals.Habitat;
                 command.Parameters.Add("@Population", System.Data.SqlDbType.Int, 50).Value = marineAnimals.Population;
                 command.Parameters.Add("@Status", System.Data.SqlDbType.VarChar, 50).Value = marineAnimals.getStatus();
+                command.Parameters.Add("@ImgPath", System.Data.SqlDbType.VarChar, 1000).Value = marineAnimals.ImgPath;
 
 
                 connection.Open();
@@ -268,11 +276,11 @@ namespace u20691302_HW04.Data
 
                 if (bigCats.ID <= 0)
                 {
-                    sqlQuery = "INSERT INTO dbo.BigCats Values(@ScientificName, @Habitat, @Population, @Status)";
+                    sqlQuery = "INSERT INTO dbo.BigCats Values(@ScientificName, @Habitat, @Population, @Status, @ImgPath)";
                 }
                 else
                 {
-                    sqlQuery = "UPDATE dbo.BigCats SET ScientificName = @ScientificName, Habitat = @Habitat, Population = @Population, Status = @Status WHERE Id = @Id";
+                    sqlQuery = "UPDATE dbo.BigCats SET ScientificName = @ScientificName, Habitat = @Habitat, Population = @Population, Status = @Status, ImgPath = @ImgPath WHERE Id = @Id";
                 }
 
                 SqlCommand command = new SqlCommand(sqlQuery, connection);
@@ -282,6 +290,7 @@ namespace u20691302_HW04.Data
                 command.Parameters.Add("@Habitat", System.Data.SqlDbType.VarChar, 1000).Value = bigCats.Habitat;
                 command.Parameters.Add("@Population", System.Data.SqlDbType.Int, 50).Value = bigCats.Population;
                 command.Parameters.Add("@Status", System.Data.SqlDbType.VarChar, 50).Value = bigCats.getStatus();
+                command.Parameters.Add("@ImgPath", System.Data.SqlDbType.VarChar, 1000).Value = bigCats.ImgPath;
 
 
                 connection.Open();
@@ -304,11 +313,11 @@ namespace u20691302_HW04.Data
 
                 if (primates .ID <= 0)
                 {
-                    sqlQuery = "INSERT INTO dbo.Primates Values(@ScientificName, @Habitat, @Population, @Status)";
+                    sqlQuery = "INSERT INTO dbo.Primates Values(@ScientificName, @Habitat, @Population, @Status, @ImgPath)";
                 }
                 else
                 {
-                    sqlQuery = "UPDATE dbo.Primates SET ScientificName = @ScientificName, Habitat = @Habitat, Population = @Population, Status = @Status WHERE Id = @Id";
+                    sqlQuery = "UPDATE dbo.Primates SET ScientificName = @ScientificName, Habitat = @Habitat, Population = @Population, Status = @Status, ImgPath = @ImgPath WHERE Id = @Id";
                 }
 
                 SqlCommand command = new SqlCommand(sqlQuery, connection);
@@ -318,6 +327,7 @@ namespace u20691302_HW04.Data
                 command.Parameters.Add("@Habitat", System.Data.SqlDbType.VarChar, 1000).Value = primates.Habitat;
                 command.Parameters.Add("@Population", System.Data.SqlDbType.Int, 50).Value = primates.Population;
                 command.Parameters.Add("@Status", System.Data.SqlDbType.VarChar, 50).Value = primates.getStatus();
+                command.Parameters.Add("@ImgPath", System.Data.SqlDbType.VarChar, 1000).Value = primates.ImgPath;
 
 
                 connection.Open();
@@ -419,6 +429,7 @@ namespace u20691302_HW04.Data
                         marineAnimals.Habitat = reader.GetString(2);
                         marineAnimals.Population = reader.GetInt32(3);
                         marineAnimals.Status = reader.GetString(4);
+                        marineAnimals.ImgPath = reader.GetString(5);
 
                         returnList.Add(marineAnimals);
                     }

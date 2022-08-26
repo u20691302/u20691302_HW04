@@ -16,7 +16,7 @@ namespace u20691302_HW04.Models
 
         }
 
-        public BigCats(string habitat, int id, string scientificName, int population, string status) : base(id, scientificName, population, status)
+        public BigCats(string habitat, int id, string scientificName, int population, string status, string imgPath) : base(id, scientificName, population, status, imgPath)
         {
             Habitat = habitat;
         }

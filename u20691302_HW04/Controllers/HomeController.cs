@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using u20691302_HW04.Data;
 using u20691302_HW04.Models;
+using System.IO;
 
 namespace u20691302_HW04.Controllers
 {
@@ -81,13 +82,21 @@ namespace u20691302_HW04.Controllers
 
         
         //Create or update marine animals
+        [HttpGet]
         public ActionResult Create(MarineAnimals marineAnimals)
         {
             return View("Create", marineAnimals);
         }
 
+        [HttpPost]
         public ActionResult ProcessCreate(MarineAnimals marineAnimals)
         {
+            string fileName = Path.GetFileNameWithoutExtension(marineAnimals.Imgfile.FileName);
+            string extension = Path.GetExtension(marineAnimals.Imgfile.FileName);
+            fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension;
+            marineAnimals.ImgPath = "~/Resources/" + fileName;
+            fileName = Path.Combine(Server.MapPath("~/Resources/"), fileName);
+            marineAnimals.Imgfile.SaveAs(fileName);
             //save to the db
             wildlifeDAO wildlifeDAO = new wildlifeDAO();
 
@@ -107,13 +116,20 @@ namespace u20691302_HW04.Controllers
 
 
         //Create or update big cats
+        [HttpGet]
         public ActionResult CreateBigCats(BigCats bigCats)
         {
             return View("CreateBigCats", bigCats);
         }
-
+        [HttpPost]
         public ActionResult ProcessCreateBigCats(BigCats bigCats)
         {
+            string fileName = Path.GetFileNameWithoutExtension(bigCats.Imgfile.FileName);
+            string extension = Path.GetExtension(bigCats.Imgfile.FileName);
+            fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension;
+            bigCats.ImgPath = "~/Resources/" + fileName;
+            fileName = Path.Combine(Server.MapPath("~/Resources/"), fileName);
+            bigCats.Imgfile.SaveAs(fileName);
             //save to the db
             wildlifeDAO wildlifeDAO = new wildlifeDAO();
 
@@ -140,6 +156,12 @@ namespace u20691302_HW04.Controllers
 
         public ActionResult ProcessCreatePrimates(Primates primates)
         {
+            string fileName = Path.GetFileNameWithoutExtension(primates.Imgfile.FileName);
+            string extension = Path.GetExtension(primates.Imgfile.FileName);
+            fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension;
+            primates.ImgPath = "~/Resources/" + fileName;
+            fileName = Path.Combine(Server.MapPath("~/Resources/"), fileName);
+            primates.Imgfile.SaveAs(fileName);
             //save to the db
             wildlifeDAO wildlifeDAO = new wildlifeDAO();
 
